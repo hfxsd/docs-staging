@@ -1,86 +1,107 @@
 ---
-title: TiDB in Kubernetes Documentation
-summary: Learn about TiDB in Kubernetes documentation.
-aliases: ['/docs/tidb-in-kubernetes/dev/']
+title: TiDB in Kubernetes 用户文档
+summary: 了解 TiDB in Kubernetes 的用户文档。
+aliases: ['/docs-cn/tidb-in-kubernetes/dev/']
+hide_sidebar: true
+hide_commit: true
 ---
 
-# TiDB in Kubernetes Documentation
+# TiDB in Kubernetes 用户文档
 
-You can use [TiDB Operator](https://github.com/pingcap/tidb-operator) to deploy TiDB clusters in Kubernetes. TiDB Operator is an automatic operation system for TiDB clusters in Kubernetes. It provides full life-cycle management for TiDB including deployment, upgrades, scaling, backup, fail-over, and configuration changes. With TiDB Operator, TiDB can run seamlessly in the Kubernetes clusters deployed on a public or private cloud.
+你可以使用 [TiDB Operator](https://github.com/pingcap/tidb-operator) 在 Kubernetes 上部署 TiDB。TiDB Operator 是 Kubernetes 上的 TiDB 集群自动运维系统，提供包括部署、升级、扩缩容、备份恢复、配置变更的 TiDB 全生命周期管理。借助 TiDB Operator，TiDB 可以无缝运行在公有云或私有部署的 Kubernetes 集群上。
 
-The corresponding relationship between TiDB Operator and TiDB versions is as follows:
+TiDB 与 TiDB Operator 版本的对应关系如下：
 
-| TiDB versions | Compatible TiDB Operator versions |
+| TiDB 版本 | 适用的 TiDB Operator 版本 |
 |:---|:---|
 | dev               | dev                 |
-| TiDB >= 5.4       | 1.3                 |
-| 5.1 <= TiDB < 5.4 | 1.3 (Recommended), 1.2      |
-| 3.0 <= TiDB < 5.1 | 1.3 (Recommended), 1.2, 1.1 |
-| 2.1 <= TiDB < v3.0| 1.0 (End of support)       |
+| TiDB >= 5.4       | 1.4，1.3（推荐）          |
+| 5.1 <= TiDB < 5.4 | 1.4，1.3（推荐），1.2      |
+| 3.0 <= TiDB < 5.1 | 1.4，1.3（推荐），1.2，1.1 |
+| 2.1 <= TiDB < v3.0| 1.0（停止维护）       |
 
-<NavColumns>
-<NavColumn>
-<ColumnTitle>About TiDB Operator</ColumnTitle>
+<LearningPathContainer platform="tidb-operator" title="TiDB Operator" subTitle="TiDB Operator 是 Kubernetes 上的 TiDB 集群自动运维系统，提供包括部署、升级、扩缩容、备份恢复、配置变更的 TiDB 全生命周期管理。借助 TiDB Operator，TiDB 可以无缝运行在公有云或私有部署的 Kubernetes 集群上。">
 
-- [TiDB Operator Overview](tidb-operator-overview.md)
-- [TiDB Operator Architecture](architecture.md)
-- [What's New in v1.3](whats-new-in-v1.3.md)
+<LearningPath label="了解" icon="cloud1">
 
-</NavColumn>
+[TiDB Operator 简介](tidb-operator-overview.md)
 
-<NavColumn>
-<ColumnTitle>Quick Start</ColumnTitle>
+[TiDB Operator 架构](architecture.md)
 
-- [kind](get-started.md#method-1-create-a-kubernetes-cluster-using-kind)
-- [Minikube](get-started.md#method-2-create-a-kubernetes-cluster-using-minikube)
-- [GKE](deploy-tidb-from-kubernetes-gke.md)
+[TiDB Operator v1.3 新特性](whats-new-in-v1.3.md)
 
-</NavColumn>
+</LearningPath>
 
-<NavColumn>
-<ColumnTitle>Deploy TiDB</ColumnTitle>
+<LearningPath label="试用" icon="cloud5">
 
-- [On Amazon EKS](deploy-on-aws-eks.md)
-- [On GCP GKE](deploy-on-gcp-gke.md)
-- [On Azure AKS](deploy-on-azure-aks.md)
-- [On Alibaba ACK](deploy-on-alibaba-cloud.md)
-- [On Self-managed Kubernetes](deploy-on-general-kubernetes.md)
-- [Deploy TiFlash to Explore TiDB HTAP](deploy-tiflash.md)
+[kind](get-started.md#方法一使用-kind-创建-kubernetes-集群)
 
-</NavColumn>
+[Minikube](get-started.md#方法二使用-minikube-创建-kubernetes-集群)
 
-<NavColumn>
-<ColumnTitle>Secure</ColumnTitle>
+[Google Cloud Shell](https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/pingcap/docs-tidb-operator&cloudshell_tutorial=zh/deploy-tidb-from-kubernetes-gke.md)
 
-- [Enable TLS for the MySQL Client](enable-tls-for-mysql-client.md)
-- [Enable TLS between TiDB Components](enable-tls-between-components.md)
-- [Enable TLS for TiDB Data Migration](enable-tls-for-dm.md)
-- [Replicate Data to TLS-enabled Downstream Services](enable-tls-for-ticdc-sink.md)
-- [Renew and Replace the TLS Certificate](renew-tls-certificate.md)
-- [Run Containers as a Non-root User](containers-run-as-non-root-user.md)
+</LearningPath>
 
-</NavColumn>
+<LearningPath label="部署" icon="deploy">
 
-<NavColumn>
-<ColumnTitle>Manage</ColumnTitle>
+[部署到 Amazon EKS](deploy-on-aws-eks.md)
 
-- [Upgrade a TiDB Cluster](upgrade-a-tidb-cluster.md)
-- [Upgrade TiDB Operator](upgrade-tidb-operator.md)
-- [Scale a TiDB Cluster](scale-a-tidb-cluster.md)
-- [Backup and Restore Data](backup-restore-overview.md)
-- [Deploy Monitoring and Alerts](monitor-a-tidb-cluster.md)
-- [Maintain Kubernetes Nodes](maintain-a-kubernetes-node.md)
-- [Use Automatic Failover](use-auto-failover.md)
+[部署到 GCP GKE](deploy-on-gcp-gke.md)
 
-</NavColumn>
+[部署到 Azure AKS](deploy-on-azure-aks.md)
 
-<NavColumn>
-<ColumnTitle>Reference</ColumnTitle>
+[部署到阿里云 ACK](deploy-on-alibaba-cloud.md)
 
-- [TiDB Scheduler](tidb-scheduler.md)
-- [API Docs](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs.md)
-- [Configure TiDB Binlog Drainer](configure-tidb-binlog-drainer.md)
+[部署到自托管的 Kubernetes](prerequisites.md)
 
-</NavColumn>
+[部署 TiDB HTAP 存储引擎 TiFlash](deploy-tiflash.md)
 
-</NavColumns>
+</LearningPath>
+
+<LearningPath label="安全" icon="cloud3">
+
+[为 MySQL 客户端开启 TLS](enable-tls-for-mysql-client.md)
+
+[为 TiDB 组件间开启 TLS](enable-tls-between-components.md)
+
+[为 TiDB DM 组件开启 TLS](enable-tls-for-dm.md)
+
+[同步数据到开启 TLS 的下游服务](enable-tls-for-ticdc-sink.md)
+
+[更新和替换 TLS 证书](renew-tls-certificate.md)
+
+[以非 root 用户运行容器](containers-run-as-non-root-user.md)
+
+</LearningPath>
+
+<LearningPath label="运维" icon="maintain">
+
+[升级 TiDB 集群](upgrade-a-tidb-cluster.md)
+
+[升级 TiDB Operator](upgrade-tidb-operator.md)
+
+[扩缩容 TiDB 集群](scale-a-tidb-cluster.md)
+
+[备份与恢复数据](backup-restore-overview.md)
+
+[部署 TiDB 集群监控与告警](monitor-a-tidb-cluster.md)
+
+[维护 TiDB 集群所在节点](maintain-a-kubernetes-node.md)
+
+[集群故障自动转移](use-auto-failover.md)
+
+</LearningPath>
+
+<LearningPath label="参考" icon="cloud-dev">
+
+[架构](tidb-scheduler.md)
+
+[API 参考文档](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs.md)
+
+[工具](use-tkctl.md)
+
+[配置](configure-tidb-binlog-drainer.md)
+
+</LearningPath>
+
+</LearningPathContainer>
