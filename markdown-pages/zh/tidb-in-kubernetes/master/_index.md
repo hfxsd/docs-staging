@@ -42,8 +42,6 @@ TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](htt
 
 [部署到自托管的 Kubernetes](prerequisites.md)
 
-[部署 TiDB HTAP 存储引擎 TiFlash](deploy-tiflash.md)
-
 </LearningPath>
 
 <LearningPath label="安全" icon="cloud3">
@@ -86,9 +84,9 @@ TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](htt
 
 [API 参考文档](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs.md)
 
-[工具](use-tkctl.md)
+[工具](tidb-toolkit.md)
 
-[配置](configure-tidb-binlog-drainer.md)
+[Command Cheat Sheet](https://docs.pingcap.com/zh/tidb-in-kubernetes/stable/cheat-sheet)
 
 </LearningPath>
 
