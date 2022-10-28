@@ -22,11 +22,11 @@ TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](htt
 
 <LearningPath label="试用" icon="cloud5">
 
-[kind](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法一使用-kind-创建-kubernetes-集群)
+[使用 kind 方式](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法一使用-kind-创建-kubernetes-集群)
 
-[Minikube](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法二使用-minikube-创建-kubernetes-集群)
+[使用 Minikube 方式](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法二使用-minikube-创建-kubernetes-集群)
 
-[Google Cloud Shell](https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/pingcap/docs-tidb-operator&cloudshell_tutorial=zh/deploy-tidb-from-kubernetes-gke.md)
+[使用 Google Cloud Shell 方式](https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/pingcap/docs-tidb-operator&cloudshell_tutorial=zh/deploy-tidb-from-kubernetes-gke.md)
 
 </LearningPath>
 
