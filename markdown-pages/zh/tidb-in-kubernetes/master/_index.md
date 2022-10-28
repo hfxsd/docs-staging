@@ -80,8 +80,6 @@ TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](htt
 
 <LearningPath label="参考" icon="cloud-dev">
 
-[架构](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/tidb-scheduler)
-
 [API 参考文档](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs)
 
 [工具](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/tidb-toolkit)
