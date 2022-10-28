@@ -20,18 +20,6 @@ hide_commit: true
 
 [TiDB 与 TiDB Operator 版本的对应关系](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/tidb-operator-overview)
 
-</LearningPath>
-
-<LearningPath label="试用" icon="cloud5">
-
-[使用 kind 方式](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法一使用-kind-创建-kubernetes-集群)
-
-[使用 Minikube 方式](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started#方法二使用-minikube-创建-kubernetes-集群)
-
-[使用 Google Cloud Shell 方式](https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/pingcap/docs-tidb-operator&cloudshell_tutorial=zh/deploy-tidb-from-kubernetes-gke.md)
-
-</LearningPath>
-
 <LearningPath label="部署" icon="deploy">
 
 [部署到 Amazon EKS](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/deploy-on-aws-eks)
