@@ -6,7 +6,7 @@ hide_sidebar: true
 hide_commit: true
 ---
 
-<LearningPathContainer platform="tidb-operator" title="TiDB in Kubernetes" subTitle="你可以在 Kubernetes 上运行 TiDB。PingCAP 提供 TiDB Operator，帮助你在 Kubernetes 上自动运维 TiDB 集群。借助 TiDB Operator，TiDB 可以无缝运行在公有云或私有部署的 Kubernetes 集群上。">
+<LearningPathContainer platform="tidb-operator" title="TiDB in Kubernetes" subTitle="使用 PingCAP 提供的 TiDB Operator，你可以在公有云或私有部署的 Kubernetes 集群上自动运维 TiDB 集群，实现 TiDB 在 Kubernetes 上的无缝运行。">
 
 TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/tidb-operator-overview)。
 
