@@ -20,6 +20,8 @@ hide_commit: true
 
 [TiDB 与 TiDB Operator 版本关系](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/tidb-operator-overview)
 
+</LearningPath>
+
 <LearningPath label="部署" icon="deploy">
 
 [部署到 Amazon EKS](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/deploy-on-aws-eks)
