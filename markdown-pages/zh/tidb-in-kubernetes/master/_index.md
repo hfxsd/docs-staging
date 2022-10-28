@@ -18,6 +18,8 @@ TiDB 与 TiDB Operator 版本的对应关系请参考 [TiDB Operator 简介](htt
 
 [TiDB Operator v1.3 新特性](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/whats-new-in-v1.3)
 
+[快速上手](https://docs.pingcap.com/zh/tidb-in-kubernetes/dev/get-started)
+
 </LearningPath>
 
 <LearningPath label="试用" icon="cloud5">
