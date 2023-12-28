@@ -2,8 +2,8 @@ name: Sync scaffold
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 */15 * *" # every 15 days
+  # schedule:
+  #   - cron: "0 0 */15 * *" # every 15 days
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
