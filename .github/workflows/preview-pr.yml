@@ -1,0 +1,32 @@
+name: PR Preview
+
+on:
+  push:
+    branches:
+      - preview/**
+      - preview-cloud/**
+      - preview-operator/**
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout current repo
+      uses: actions/checkout@v3
+
+    - name: Sync PR
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        ./sync.sh
+        ./.github/git_push.sh ${{ github.ref_name }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,104 +1,80 @@
 ---
-title: TiDB in Kubernetes 用户文档
-summary: 了解 TiDB in Kubernetes 的用户文档。
-aliases: ['/docs-cn/tidb-in-kubernetes/dev/']
+title: TiDB on Kubernetes Documentation
+summary: Learn about TiDB on Kubernetes documentation.
+aliases: ['/docs/tidb-in-kubernetes/dev/']
 hide_sidebar: true
 hide_commit: true
 ---
 
-<LearningPathContainer platform="tidb-operator" title="TiDB Operator" subTitle="TiDB Operator 是 Kubernetes 上的 TiDB 集群自动运维系统，提供包括部署、升级、扩缩容、备份恢复、配置变更的 TiDB 全生命周期管理。">
+<LearningPathContainer platform="tidb-operator" title="TiDB on Kubernetes Documentation" subTitle="Using TiDB Operator provided by PingCAP, you can run and maintain TiDB seamlessly on the Kubernetes clusters deployed on a public cloud or in a self-hosted environment.">
 
-你可以使用 [TiDB Operator](https://github.com/pingcap/tidb-operator) 在 Kubernetes 上部署 TiDB。TiDB Operator 是 Kubernetes 上的 TiDB 集群自动运维系统，提供包括部署、升级、扩缩容、备份恢复、配置变更的 TiDB 全生命周期管理。借助 TiDB Operator，TiDB 可以无缝运行在公有云或私有部署的 Kubernetes 集群上。
+<LearningPath label="Learn" icon="cloud1">
 
-TiDB 与 TiDB Operator 版本的对应关系如下： 
+[TiDB Operator Overview](https://docs.pingcap.com/tidb-in-kubernetes/dev/tidb-operator-overview)
 
-| TiDB 版本 | 适用的 TiDB Operator 版本 |
-|:---|:---|
-| dev               | dev                 |
-| TiDB >= 5.4       | 1.4，1.3（推荐）          |
-| 5.1 <= TiDB < 5.4 | 1.4，1.3（推荐），1.2      |
-| 3.0 <= TiDB < 5.1 | 1.4，1.3（推荐），1.2，1.1 |
-| 2.1 <= TiDB < v3.0| 1.0（停止维护）       |
+[TiDB Operator Architecture](https://docs.pingcap.com/tidb-in-kubernetes/dev/architecture)
 
-<LearningPath label="了解" icon="cloud1">
+[Get Started](https://docs.pingcap.com/tidb-in-kubernetes/dev/get-started)
 
-[TiDB Operator 简介](tidb-operator-overview.md)
-
-[TiDB Operator 架构](architecture.md)
-
-[TiDB Operator v1.3 新特性](whats-new-in-v1.3.md)
+[Relationship between TiDB Operator and TiDB Versions](https://docs.pingcap.com/tidb-in-kubernetes/dev/tidb-operator-overview)
 
 </LearningPath>
 
-<LearningPath label="试用" icon="cloud5">
+<LearningPath label="Deploy TiDB" icon="deploy">
 
-[kind](get-started.md#方法一使用-kind-创建-kubernetes-集群)
+[On Amazon EKS](https://docs.pingcap.com/tidb-in-kubernetes/dev/deploy-on-aws-eks)
 
-[Minikube](get-started.md#方法二使用-minikube-创建-kubernetes-集群)
+[On Google Cloud GKE](https://docs.pingcap.com/tidb-in-kubernetes/dev/deploy-on-gcp-gke)
 
-[Google Cloud Shell](https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/pingcap/docs-tidb-operator&cloudshell_tutorial=zh/deploy-tidb-from-kubernetes-gke.md)
+[On Azure AKS](https://docs.pingcap.com/tidb-in-kubernetes/dev/deploy-on-azure-aks)
 
-</LearningPath>
+[On Alibaba ACK](https://docs.pingcap.com/tidb-in-kubernetes/dev/deploy-on-alibaba-cloud)
 
-<LearningPath label="部署" icon="deploy">
-
-[部署到 Amazon EKS](deploy-on-aws-eks.md)
-
-[部署到 GCP GKE](deploy-on-gcp-gke.md)
-
-[部署到 Azure AKS](deploy-on-azure-aks.md)
-
-[部署到阿里云 ACK](deploy-on-alibaba-cloud.md)
-
-[部署到自托管的 Kubernetes](prerequisites.md)
-
-[部署 TiDB HTAP 存储引擎 TiFlash](deploy-tiflash.md)
+[On Self-managed Kubernetes](https://docs.pingcap.com/tidb-in-kubernetes/dev/deploy-on-general-kubernetes)
 
 </LearningPath>
 
-<LearningPath label="安全" icon="cloud3">
+<LearningPath label="Secure" icon="cloud3">
 
-[为 MySQL 客户端开启 TLS](enable-tls-for-mysql-client.md)
+[Enable TLS for the MySQL Client](https://docs.pingcap.com/tidb-in-kubernetes/dev/enable-tls-for-mysql-client)
 
-[为 TiDB 组件间开启 TLS](enable-tls-between-components.md)
+[Enable TLS between TiDB Components](https://docs.pingcap.com/tidb-in-kubernetes/dev/enable-tls-between-components)
 
-[为 TiDB DM 组件开启 TLS](enable-tls-for-dm.md)
+[Enable TLS for TiDB Data Migration](https://docs.pingcap.com/tidb-in-kubernetes/dev/enable-tls-for-dm)
 
-[同步数据到开启 TLS 的下游服务](enable-tls-for-ticdc-sink.md)
+[Replicate Data to TLS-enabled Downstream Services](https://docs.pingcap.com/tidb-in-kubernetes/dev/enable-tls-for-ticdc-sink)
 
-[更新和替换 TLS 证书](renew-tls-certificate.md)
+[Renew and Replace the TLS Certificate](https://docs.pingcap.com/tidb-in-kubernetes/dev/renew-tls-certificate)
 
-[以非 root 用户运行容器](containers-run-as-non-root-user.md)
-
-</LearningPath>
-
-<LearningPath label="运维" icon="maintain">
-
-[升级 TiDB 集群](upgrade-a-tidb-cluster.md)
-
-[升级 TiDB Operator](upgrade-tidb-operator.md)
-
-[扩缩容 TiDB 集群](scale-a-tidb-cluster.md)
-
-[备份与恢复数据](backup-restore-overview.md)
-
-[部署 TiDB 集群监控与告警](monitor-a-tidb-cluster.md)
-
-[维护 TiDB 集群所在节点](maintain-a-kubernetes-node.md)
-
-[集群故障自动转移](use-auto-failover.md)
+[Run Containers as a Non-root User](https://docs.pingcap.com/tidb-in-kubernetes/dev/containers-run-as-non-root-user)
 
 </LearningPath>
 
-<LearningPath label="参考" icon="cloud-dev">
+<LearningPath label="Manage" icon="maintain">
 
-[架构](tidb-scheduler.md)
+[Upgrade a TiDB Cluster](https://docs.pingcap.com/tidb-in-kubernetes/dev/upgrade-a-tidb-cluster)
 
-[API 参考文档](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs.md)
+[Upgrade TiDB Operator](https://docs.pingcap.com/tidb-in-kubernetes/dev/upgrade-tidb-operator)
 
-[工具](use-tkctl.md)
+[Scale a TiDB Cluster](https://docs.pingcap.com/tidb-in-kubernetes/dev/scale-a-tidb-cluster)
 
-[配置](configure-tidb-binlog-drainer.md)
+[Backup and Restore Data](https://docs.pingcap.com/tidb-in-kubernetes/dev/backup-restore-overview)
+
+[Deploy Monitoring and Alerts](https://docs.pingcap.com/tidb-in-kubernetes/dev/monitor-a-tidb-cluster)
+
+[Maintain Kubernetes Nodes](https://docs.pingcap.com/tidb-in-kubernetes/dev/maintain-a-kubernetes-node)
+
+[Use Automatic Failover](https://docs.pingcap.com/tidb-in-kubernetes/dev/use-auto-failover)
+
+</LearningPath>
+
+<LearningPath label="Reference" icon="cloud-dev">
+
+[API Docs](https://github.com/pingcap/tidb-operator/blob/master/docs/api-references/docs.md)
+
+[Tools](https://docs.pingcap.com/tidb-in-kubernetes/dev/tidb-toolkit)
+
+[Command Cheat Sheet](https://docs.pingcap.com/tidb-in-kubernetes/dev/cheat-sheet)
 
 </LearningPath>
 

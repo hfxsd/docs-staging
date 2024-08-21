@@ -1,6 +1,6 @@
 ---
 title: TiDB Introduction
-aliases: ["/docs/dev/", "/docs/dev/adopters/", "/tidb/dev/adopters"]
+aliases: ['/tidb/v5.4/adopters', '/tidb/stable/adopters']
 hide_sidebar: true
 hide_commit: true
 ---
@@ -31,7 +31,7 @@ hide_commit: true
 
 [Software and Hardware Requirements](https://docs.pingcap.com/tidb/v5.4/hardware-and-software-requirements)
 
-[Deploy a TiDB Cluster Using TiUP (Recommended)](https://docs.pingcap.com/tidb/v5.4/production-deployment-using-tiup)
+[Deploy a TiDB Cluster Using TiUP](https://docs.pingcap.com/tidb/v5.4/production-deployment-using-tiup)
 
 [Deploy a TiDB Cluster in Kubernetes](https://docs.pingcap.com/tidb/v5.4/tidb-in-kubernetes)
 

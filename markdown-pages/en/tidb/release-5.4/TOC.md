@@ -32,7 +32,7 @@
     - [Cross-DC Topology](/geo-distributed-deployment-topology.md)
     - [Hybrid Topology](/hybrid-deployment-topology.md)
   - Install and Start
-    - [Use TiUP (Recommended)](/production-deployment-using-tiup.md)
+    - [Use TiUP](/production-deployment-using-tiup.md)
     - [Deploy in Kubernetes](/tidb-in-kubernetes.md)
   - [Verify Cluster Status](/post-installation-check.md)
   - Test Cluster Performance
@@ -57,7 +57,7 @@
     - [Filter DML Events Using SQL Expressions](/filter-dml-event.md)
 - Maintain
   - Upgrade
-    - [Use TiUP (Recommended)](/upgrade-tidb-using-tiup.md)
+    - [Use TiUP](/upgrade-tidb-using-tiup.md)
     - [Use TiDB Operator](https://docs.pingcap.com/tidb-in-kubernetes/stable/upgrade-a-tidb-cluster)
   - Scale
     - [Use TiUP (Recommended)](/scale-tidb-using-tiup.md)
@@ -126,6 +126,7 @@
       - [Aggregation](/explain-aggregation.md)
       - [Views](/explain-views.md)
       - [Partitions](/explain-partitions.md)
+      - [Index Merge](/explain-index-merge.md)
     - SQL Optimization Process
       - [Overview](/sql-optimization-concepts.md)
       - Logic Optimization
@@ -212,6 +213,7 @@
       - TiUP Cluster Commands
         - [Overview](/tiup/tiup-component-cluster.md)
         - [tiup cluster audit](/tiup/tiup-component-cluster-audit.md)
+        - [tiup cluster audit cleanup](/tiup/tiup-component-cluster-audit-cleanup.md)
         - [tiup cluster check](/tiup/tiup-component-cluster-check.md)
         - [tiup cluster clean](/tiup/tiup-component-cluster-clean.md)
         - [tiup cluster deploy](/tiup/tiup-component-cluster-deploy.md)
@@ -312,6 +314,7 @@
     - [Monitor](/tidb-lightning/monitor-tidb-lightning.md)
     - [FAQ](/tidb-lightning/tidb-lightning-faq.md)
     - [Glossary](/tidb-lightning/tidb-lightning-glossary.md)
+    - [Log Message Explanation](/tidb-lightning/tidb-lightning-log-message-explanation.md)
   - TiDB Data Migration
     - About TiDB Data Migration
       - [DM Overview](/dm/dm-overview.md)
@@ -376,6 +379,7 @@
         - [DM Architecture Overview](/dm/dm-overview.md)
         - [DM-worker](/dm/dm-worker-intro.md)
         - [Relay Log](/dm/relay-log.md)
+        - [DDL Handling](/dm/dm-ddl-compatible.md)
       - [Command-line Flags](/dm/dm-command-line-flags.md)
       - Configuration
         - [Overview](/dm/dm-config-overview.md)
@@ -424,6 +428,30 @@
     - [Storage](/tidb-storage.md)
     - [Computing](/tidb-computing.md)
     - [Scheduling](/tidb-scheduling.md)
+  - Storage Engine - TiKV
+    - [TiKV Overview](/tikv-overview.md)
+    - [RocksDB Overview](/storage-engine/rocksdb-overview.md)
+    - [Titan Overview](/storage-engine/titan-overview.md)
+    - [Titan Configuration](/storage-engine/titan-configuration.md)
+  - Storage Engine - TiFlash
+    - [Overview](/tiflash/tiflash-overview.md)
+    - [Use TiFlash](/tiflash/use-tiflash.md)
+  - [System Variables](/system-variables.md)
+  - Configuration File Parameters
+    - [tidb-server](/tidb-configuration-file.md)
+    - [tikv-server](/tikv-configuration-file.md)
+    - [tiflash-server](/tiflash/tiflash-configuration.md)
+    - [pd-server](/pd-configuration-file.md)
+  - CLI
+    - [tikv-ctl](/tikv-control.md)
+    - [pd-ctl](/pd-control.md)
+    - [tidb-ctl](/tidb-control.md)
+    - [pd-recover](/pd-recover.md)
+  - Command Line Flags
+    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
+    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
+    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
+    - [pd-server](/command-line-flags-for-pd-configuration.md)
   - Key Monitoring Metrics
     - [Overview](/grafana-overview-dashboard.md)
     - [TiDB](/grafana-tidb-dashboard.md)
@@ -463,7 +491,9 @@
       - [`ADMIN CANCEL DDL`](/sql-statements/sql-statement-admin-cancel-ddl.md)
       - [`ADMIN CHECKSUM TABLE`](/sql-statements/sql-statement-admin-checksum-table.md)
       - [`ADMIN CHECK [TABLE|INDEX]`](/sql-statements/sql-statement-admin-check-table-index.md)
-      - [`ADMIN SHOW DDL [JOBS|QUERIES]`](/sql-statements/sql-statement-admin-show-ddl.md)
+      - [`ADMIN CLEANUP`](/sql-statements/sql-statement-admin-cleanup.md)
+      - [`ADMIN RECOVER INDEX`](/sql-statements/sql-statement-admin-recover.md)
+      - [`ADMIN SHOW DDL [JOBS|JOB QUERIES]`](/sql-statements/sql-statement-admin-show-ddl.md)
       - [`ADMIN SHOW TELEMETRY`](/sql-statements/sql-statement-admin-show-telemetry.md)
       - [`ALTER DATABASE`](/sql-statements/sql-statement-alter-database.md)
       - [`ALTER INDEX`](/sql-statements/sql-statement-alter-index.md)
@@ -517,9 +547,11 @@
       - [`KILL [TIDB]`](/sql-statements/sql-statement-kill.md)
       - [`LOAD DATA`](/sql-statements/sql-statement-load-data.md)
       - [`LOAD STATS`](/sql-statements/sql-statement-load-stats.md)
+      - [`LOCK TABLES` and `UNLOCK TABLES`](/sql-statements/sql-statement-lock-tables-and-unlock-tables.md)
       - [`MODIFY COLUMN`](/sql-statements/sql-statement-modify-column.md)
       - [`PREPARE`](/sql-statements/sql-statement-prepare.md)
       - [`RECOVER TABLE`](/sql-statements/sql-statement-recover-table.md)
+      - [`RENAME USER`](/sql-statements/sql-statement-rename-user.md)
       - [`RENAME INDEX`](/sql-statements/sql-statement-rename-index.md)
       - [`RENAME TABLE`](/sql-statements/sql-statement-rename-table.md)
       - [`REPLACE`](/sql-statements/sql-statement-replace.md)
@@ -611,6 +643,7 @@
       - [Set Operations](/functions-and-operators/set-operators.md)
       - [List of Expressions for Pushdown](/functions-and-operators/expressions-pushed-down.md)
       - [TiDB Specific Functions](/functions-and-operators/tidb-functions.md)
+      - [Comparisons between Functions and Syntax of Oracle and TiDB](/oracle-functions-to-tidb.md)
     - [Clustered Indexes](/clustered-indexes.md)
     - [Constraints](/constraints.md)
     - [Generated Columns](/generated-columns.md)
@@ -713,33 +746,8 @@
         - [Share Session](/dashboard/dashboard-session-share.md)
         - [Configure SSO](/dashboard/dashboard-session-sso.md)
       - [FAQ](/dashboard/dashboard-faq.md)
-  - CLI
-    - [tikv-ctl](/tikv-control.md)
-    - [pd-ctl](/pd-control.md)
-    - [tidb-ctl](/tidb-control.md)
-    - [pd-recover](/pd-recover.md)
-  - Command Line Flags
-    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
-    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
-    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
-    - [pd-server](/command-line-flags-for-pd-configuration.md)
-  - Configuration File Parameters
-    - [tidb-server](/tidb-configuration-file.md)
-    - [tikv-server](/tikv-configuration-file.md)
-    - [tiflash-server](/tiflash/tiflash-configuration.md)
-    - [pd-server](/pd-configuration-file.md)
-  - [System Variables](/system-variables.md)
-  - Storage Engines
-    - TiKV
-      - [TiKV Overview](/tikv-overview.md)
-      - [RocksDB Overview](/storage-engine/rocksdb-overview.md)
-      - [Titan Overview](/storage-engine/titan-overview.md)
-      - [Titan Configuration](/storage-engine/titan-configuration.md)
-    - TiFlash
-      - [Overview](/tiflash/tiflash-overview.md)
-      - [Use TiFlash](/tiflash/use-tiflash.md)
   - [Telemetry](/telemetry.md)
-  - [Errors Codes](/error-codes.md)
+  - [Error Codes](/error-codes.md)
   - [Table Filter](/table-filter.md)
   - [Schedule Replicas by Topology Labels](/schedule-replicas-by-topology-labels.md)
 - FAQs
@@ -757,10 +765,13 @@
   - [Release Timeline](/releases/release-timeline.md)
   - [TiDB Versioning](/releases/versioning.md)
   - v5.4
+    - [5.4.3](/releases/release-5.4.3.md)
     - [5.4.2](/releases/release-5.4.2.md)
     - [5.4.1](/releases/release-5.4.1.md)
     - [5.4.0](/releases/release-5.4.0.md)
   - v5.3
+    - [5.3.4](/releases/release-5.3.4.md)
+    - [5.3.3](/releases/release-5.3.3.md)
     - [5.3.2](/releases/release-5.3.2.md)
     - [5.3.1](/releases/release-5.3.1.md)
     - [5.3.0](/releases/release-5.3.0.md)
@@ -771,6 +782,7 @@
     - [5.2.1](/releases/release-5.2.1.md)
     - [5.2.0](/releases/release-5.2.0.md)
   - v5.1
+    - [5.1.5](/releases/release-5.1.5.md)
     - [5.1.4](/releases/release-5.1.4.md)
     - [5.1.3](/releases/release-5.1.3.md)
     - [5.1.2](/releases/release-5.1.2.md)

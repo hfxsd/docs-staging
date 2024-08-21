@@ -1,12 +1,13 @@
 <!-- markdownlint-disable MD007 -->
 <!-- markdownlint-disable MD041 -->
 
+- [TiDB in Kubernetes Docs](https://docs.pingcap.com/tidb-in-kubernetes/v1.3)
 - Introduction
   - [Overview](tidb-operator-overview.md)
   - [What's New in v1.3](whats-new-in-v1.3.md)
 - [Get Started](get-started.md)
 - Deploy
-  - In Self-Managed Kubernetes
+  - On Self-Managed Kubernetes
     - [Prerequisites](prerequisites.md)
     - [Configure Storage Class](configure-storage-class.md)
     - [Deploy TiDB Operator](deploy-tidb-operator.md)
@@ -14,7 +15,7 @@
     - [Deploy a TiDB Cluster](deploy-on-general-kubernetes.md)
     - [Initialize a TiDB Cluster](initialize-a-cluster.md)
     - [Access a TiDB Cluster](access-tidb.md)
-  - In Public Cloud Kubernetes
+  - On Public Cloud Kubernetes
     - [Amazon EKS](deploy-on-aws-eks.md)
     - [GCP GKE](deploy-on-gcp-gke.md)
     - [Azure AKS](deploy-on-azure-aks.md)
@@ -32,6 +33,7 @@
   - [Deploy Monitoring and Alerts for TiDB](monitor-a-tidb-cluster.md)
   - [Monitor and Diagnose TiDB Using TiDB Dashboard](access-dashboard.md)
   - [Aggregate Monitoring Data of Multiple TiDB Clusters](aggregate-multiple-cluster-monitor-data.md)
+  - [Monitor a TiDB Cluster across Multiple Kubernetes Clusters](deploy-tidb-monitor-across-multiple-kubernetes.md)
   - [Enable Dynamic Configuration for TidbMonitor](enable-monitor-dynamic-configuration.md)
   - [Enable Shards for TidbMonitor](enable-monitor-shards.md)
 - Migrate
@@ -80,7 +82,8 @@
     - [View TiDB Logs](view-logs.md)
     - [Modify TiDB Cluster Configuration](modify-tidb-configuration.md)
     - [Configure Automatic Failover](use-auto-failover.md)
-    - [Pause Sync of TiDB Cluster](pause-sync-of-tidb-cluster.md)
+    - [Pause Sync of a TiDB Cluster](pause-sync-of-tidb-cluster.md)
+    - [Suspend a TiDB Cluster](suspend-tidb-cluster.md)
     - [Maintain Different TiDB Clusters Separately Using Multiple TiDB Operator](deploy-multiple-tidb-operator.md)
     - [Maintain Kubernetes Nodes](maintain-a-kubernetes-node.md)
     - [Migrate from Helm 2 to Helm 3](migrate-to-helm3.md)
@@ -117,6 +120,9 @@
   - [PingCAP Clinic Diagnostic Data](clinic-data-collection.md)
 - Release Notes
   - v1.3
+    - [1.3.10](releases/release-1.3.10.md)
+    - [1.3.9](releases/release-1.3.9.md)
+    - [1.3.8](releases/release-1.3.8.md)
     - [1.3.7](releases/release-1.3.7.md)
     - [1.3.6](releases/release-1.3.6.md)
     - [1.3.5](releases/release-1.3.5.md)

@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD007 -->
 <!-- markdownlint-disable MD041 -->
 
+- [TiDB in Kubernetes Docs](https://docs.pingcap.com/tidb-in-kubernetes/v1.2)
 - Introduction
   - [Overview](tidb-operator-overview.md)
   - [What's New in v1.2](whats-new-in-v1.2.md)
@@ -32,6 +33,7 @@
   - [Deploy Monitoring and Alerts for TiDB](monitor-a-tidb-cluster.md)
   - [Monitor and Diagnose TiDB Using TiDB Dashboard](access-dashboard.md)
   - [Aggregate Monitoring Data of Multiple TiDB Clusters](aggregate-multiple-cluster-monitor-data.md)
+  - [Monitor a TiDB Cluster across Multiple Kubernetes Clusters](deploy-tidb-monitor-across-multiple-kubernetes.md)
 - Migrate
   - [Import Data](restore-data-using-tidb-lightning.md)
   - Migrate from MySQL

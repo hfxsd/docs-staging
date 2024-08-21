@@ -29,7 +29,7 @@
     - [跨机房部署拓扑结构](/geo-distributed-deployment-topology.md)
     - [混合部署拓扑结构](/hybrid-deployment-topology.md)
   - 安装与启动
-    - [使用 TiUP 部署（推荐）](/production-deployment-using-tiup.md)
+    - [使用 TiUP 部署](/production-deployment-using-tiup.md)
     - [在 Kubernetes 上部署](/tidb-in-kubernetes.md)
   - [验证集群状态](/post-installation-check.md)
   - 测试集群性能
@@ -48,7 +48,7 @@
   - [从 SQL 文件迁移到 TiDB](/migrate-from-mysql-dumpling-files.md)
 - 运维操作
   - 升级 TiDB 版本
-    - [使用 TiUP 升级（推荐）](/upgrade-tidb-using-tiup.md)
+    - [使用 TiUP 升级](/upgrade-tidb-using-tiup.md)
     - [使用 TiDB Operator](https://docs.pingcap.com/zh/tidb-in-kubernetes/stable/upgrade-a-tidb-cluster)
   - 扩缩容
     - [使用 TiUP（推荐）](/scale-tidb-using-tiup.md)
@@ -242,6 +242,31 @@
     - [存储](/tidb-storage.md)
     - [计算](/tidb-computing.md)
     - [调度](/tidb-scheduling.md)
+  - 存储引擎 TiKV
+    - [TiKV 简介](/tikv-overview.md)
+    - [RocksDB 简介](/storage-engine/rocksdb-overview.md)
+    - [Titan 简介](/storage-engine/titan-overview.md)
+    - [Titan 配置说明](/storage-engine/titan-configuration.md)
+  - 存储引擎 TiFlash
+    - [TiFlash 简介](/tiflash/tiflash-overview.md)
+    - [使用 TiFlash](/tiflash/use-tiflash.md)
+  - [系统变量](/system-variables.md)
+  - 配置文件参数
+    - [tidb-server](/tidb-configuration-file.md)
+    - [tikv-server](/tikv-configuration-file.md)
+    - [tiflash-server](/tiflash/tiflash-configuration.md)
+    - [pd-server](/pd-configuration-file.md)
+  - CLI
+    - [tikv-ctl](/tikv-control.md)
+    - [pd-ctl](/pd-control.md)
+    - [tidb-ctl](/tidb-control.md)
+    - [pd-recover](/pd-recover.md)
+    - [binlog-ctl](/tidb-binlog/binlog-control.md)
+  - 命令行参数
+    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
+    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
+    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
+    - [pd-server](/command-line-flags-for-pd-configuration.md)
   - 监控指标
     - [Overview 面板](/grafana-overview-dashboard.md)
     - [TiDB 面板](/grafana-tidb-dashboard.md)
@@ -281,6 +306,8 @@
       - [`ADMIN CANCEL DDL`](/sql-statements/sql-statement-admin-cancel-ddl.md)
       - [`ADMIN CHECKSUM TABLE`](/sql-statements/sql-statement-admin-checksum-table.md)
       - [`ADMIN CHECK [TABLE|INDEX]`](/sql-statements/sql-statement-admin-check-table-index.md)
+      - [`ADMIN CLEANUP`](/sql-statements/sql-statement-admin-cleanup.md)
+      - [`ADMIN RECOVER INDEX`](/sql-statements/sql-statement-admin-recover.md)
       - [`ADMIN SHOW DDL [JOBS|QUERIES]`](/sql-statements/sql-statement-admin-show-ddl.md)
       - [`ALTER DATABASE`](/sql-statements/sql-statement-alter-database.md)
       - [`ALTER INDEX`](/sql-statements/sql-statement-alter-index.md)
@@ -331,6 +358,7 @@
       - [`KILL [TIDB]`](/sql-statements/sql-statement-kill.md)
       - [`LOAD DATA`](/sql-statements/sql-statement-load-data.md)
       - [`LOAD STATS`](/sql-statements/sql-statement-load-stats.md)
+      - [`LOCK TABLES` 和 `UNLOCK TABLES`](/sql-statements/sql-statement-lock-tables-and-unlock-tables.md)
       - [`MODIFY COLUMN`](/sql-statements/sql-statement-modify-column.md)
       - [`PREPARE`](/sql-statements/sql-statement-prepare.md)
       - [`RECOVER TABLE`](/sql-statements/sql-statement-recover-table.md)
@@ -512,32 +540,6 @@
         - [分享会话](/dashboard/dashboard-session-share.md)
         - [配置 SSO 登录](/dashboard/dashboard-session-sso.md)
       - [常见问题](/dashboard/dashboard-faq.md)
-  - CLI
-    - [tikv-ctl](/tikv-control.md)
-    - [pd-ctl](/pd-control.md)
-    - [tidb-ctl](/tidb-control.md)
-    - [pd-recover](/pd-recover.md)
-    - [binlog-ctl](/tidb-binlog/binlog-control.md)
-  - 命令行参数
-    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
-    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
-    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
-    - [pd-server](/command-line-flags-for-pd-configuration.md)
-  - 配置文件参数
-    - [tidb-server](/tidb-configuration-file.md)
-    - [tikv-server](/tikv-configuration-file.md)
-    - [tiflash-server](/tiflash/tiflash-configuration.md)
-    - [pd-server](/pd-configuration-file.md)
-  - [系统变量](/system-variables.md)
-  - 存储引擎
-    - TiKV
-      - [TiKV 简介](/tikv-overview.md)
-      - [RocksDB 简介](/storage-engine/rocksdb-overview.md)
-      - [Titan 简介](/storage-engine/titan-overview.md)
-      - [Titan 配置说明](/storage-engine/titan-configuration.md)
-    - TiFlash
-      - [TiFlash 简介](/tiflash/tiflash-overview.md)
-      - [使用 TiFlash](/tiflash/use-tiflash.md)
   - [遥测](/telemetry.md)
   - [错误码](/error-codes.md)
   - [通过拓扑 label 进行副本调度](/schedule-replicas-by-topology-labels.md)
@@ -552,6 +554,7 @@
 - 版本发布历史
   - [发布版本汇总](/releases/release-notes.md)
   - v5.1
+    - [5.1.5](/releases/release-5.1.5.md)
     - [5.1.4](/releases/release-5.1.4.md)
     - [5.1.3](/releases/release-5.1.3.md)
     - [5.1.2](/releases/release-5.1.2.md)

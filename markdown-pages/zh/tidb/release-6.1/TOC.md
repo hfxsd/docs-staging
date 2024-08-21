@@ -22,13 +22,14 @@
 - 应用开发
   - [概览](/develop/dev-guide-overview.md)
   - 快速开始
-    - [使用 TiDB Cloud (Developer Tier) 构建 TiDB 集群](/develop/dev-guide-build-cluster-in-cloud.md)
+    - [使用 TiDB Serverless 构建 TiDB 集群](/develop/dev-guide-build-cluster-in-cloud.md)
     - [使用 TiDB 的增删改查 SQL](/develop/dev-guide-tidb-crud-sql.md)
-    - 构建简单的 CRUD 应用程序
-      - [Java](/develop/dev-guide-sample-application-java.md)
-      - [Golang](/develop/dev-guide-sample-application-golang.md)
   - 示例程序
-    - [使用 Spring Boot 构建 TiDB 应用程序](/develop/dev-guide-sample-application-spring-boot.md)
+    - [Golang](/develop/dev-guide-sample-application-golang.md)
+    - [Java (Spring Boot)](/develop/dev-guide-sample-application-spring-boot.md)
+    - [Java](/develop/dev-guide-sample-application-java.md)
+    - [Python (Django)](/develop/dev-guide-sample-application-django.md)
+    - [Python](/develop/dev-guide-sample-application-python.md)
   - 连接到 TiDB
     - [选择驱动或 ORM 框架](/develop/dev-guide-choose-driver-or-orm.md)
     - [连接到 TiDB](/develop/dev-guide-connect-to-tidb.md)
@@ -79,8 +80,9 @@
       - [SQL 开发规范](/develop/dev-guide-sql-development-specification.md)
   - 云原生开发环境
     - [Gitpod](/develop/dev-guide-playground-gitpod.md)
-  - 第三方软件支持
-    - [PingCAP 维护的三方库](/develop/dev-guide-third-party-support.md)
+  - 第三方工具支持
+    - [TiDB 支持的第三方工具](/develop/dev-guide-third-party-support.md)
+    - [已知的第三方工具兼容问题](/develop/dev-guide-third-party-tools-compatibility.md)
     - [TiDB 与 ProxySQL 集成](/develop/dev-guide-proxysql-integration.md)
 - 部署标准集群
   - [软硬件环境需求](/hardware-and-software-requirements.md)
@@ -94,13 +96,13 @@
     - [跨机房部署拓扑结构](/geo-distributed-deployment-topology.md)
     - [混合部署拓扑结构](/hybrid-deployment-topology.md)
   - 安装与启动
-    - [使用 TiUP 部署（推荐）](/production-deployment-using-tiup.md)
+    - [使用 TiUP 部署](/production-deployment-using-tiup.md)
     - [在 Kubernetes 上部署](/tidb-in-kubernetes.md)
   - [验证集群状态](/post-installation-check.md)
   - 测试集群性能
     - [用 Sysbench 测试 TiDB](/benchmark/benchmark-tidb-using-sysbench.md)
     - [对 TiDB 进行 TPC-C 测试](/benchmark/benchmark-tidb-using-tpcc.md)
-    - [对 TiDB 进行 CH Benchmark 测试](/benchmark/benchmark-tidb-using-ch.md)
+    - [对 TiDB 进行 CH-benCHmark 测试](/benchmark/benchmark-tidb-using-ch.md)
 - 数据迁移
   - [数据迁移概述](/migration-overview.md)
   - [迁移工具](/migration-tools.md)
@@ -126,7 +128,7 @@
     - [与 Apache Kafka 和 Apache Flink 进行数据集成](/replicate-data-to-kafka.md)
 - 运维操作
   - 升级 TiDB 版本
-    - [使用 TiUP 升级（推荐）](/upgrade-tidb-using-tiup.md)
+    - [使用 TiUP 升级](/upgrade-tidb-using-tiup.md)
     - [使用 TiDB Operator](https://docs.pingcap.com/zh/tidb-in-kubernetes/stable/upgrade-a-tidb-cluster)
   - 扩缩容
     - [使用 TiUP（推荐）](/scale-tidb-using-tiup.md)
@@ -146,6 +148,7 @@
   - [监控框架概述](/tidb-monitoring-framework.md)
   - [监控 API](/tidb-monitoring-api.md)
   - [手动部署监控](/deploy-monitoring-services.md)
+  - [升级监控组件](/upgrade-monitoring-services.md)
   - [将 Grafana 监控数据导出成快照](/exporting-grafana-snapshots.md)
   - [TiDB 集群报警规则与处理方法](/alert-rules.md)
   - [TiFlash 报警规则与处理方法](/tiflash/tiflash-alert-rules.md)
@@ -158,6 +161,7 @@
   - [通过日志定位消耗系统资源多的查询](/identify-expensive-queries.md)
   - [SQL 语句统计](/statement-summary-tables.md)
   - [保存和恢复集群现场信息](/sql-plan-replayer.md)
+  - [TiDB OOM 故障排查](/troubleshoot-tidb-oom.md)
   - [TiDB 集群常见问题](/troubleshoot-tidb-cluster.md)
   - [TiDB 集群问题导图](/tidb-troubleshooting-map.md)
   - [热点问题处理](/troubleshoot-hot-spot-issues.md)
@@ -167,6 +171,7 @@
   - [锁冲突与 TTL 超时](/troubleshoot-lock-conflicts.md)
   - [TiFlash 常见问题](/tiflash/troubleshoot-tiflash.md)
   - [数据索引不一致报错](/troubleshoot-data-inconsistency-errors.md)
+  - [获取支持](/support.md)
 - 性能调优
   - 优化手册
     - [优化概述](/performance-tuning-overview.md)
@@ -215,6 +220,7 @@
         - [统计信息简介](/statistics.md)
         - [错误索引的解决方案](/wrong-index-solution.md)
         - [Distinct 优化](/agg-distinct-optimization.md)
+        - [代价模型](/cost-model.md)
       - [执行计划缓存](/sql-prepared-plan-cache.md)
     - 控制执行计划
       - [控制执行计划概览](/control-execution-plan.md)
@@ -222,9 +228,9 @@
       - [执行计划管理](/sql-plan-management.md)
       - [优化规则及表达式下推的黑名单](/blocklist-control-plan.md)
 - 教程
-  - [同城多中心部署](/multi-data-centers-in-one-city-deployment.md)
-  - [两地三中心部署](/three-data-centers-in-two-cities-deployment.md)
-  - [同城两中心部署](/two-data-centers-in-one-city-deployment.md)
+  - [单区域多 AZ 部署](/multi-data-centers-in-one-city-deployment.md)
+  - [双区域多 AZ 部署](/three-data-centers-in-two-cities-deployment.md)
+  - [单区域双 AZ 部署](/two-data-centers-in-one-city-deployment.md)
   - 读取历史数据
     - 使用 Stale Read 功能读取历史数据（推荐）
       - [Stale Read 使用场景介绍](/stale-read.md)
@@ -241,6 +247,7 @@
     - [海量 Region 集群调优](/best-practices/massive-regions-best-practices.md)
     - [三节点混合部署最佳实践](/best-practices/three-nodes-hybrid-deployment.md)
     - [在三数据中心下就近读取数据](/best-practices/three-dc-local-read.md)
+    - [使用 UUID](/best-practices/uuid.md)
   - [Placement Rules 使用文档](/configure-placement-rules.md)
   - [Load Base Split 使用文档](/configure-load-base-split.md)
   - [Store Limit 使用文档](/configure-store-limit.md)
@@ -283,6 +290,7 @@
       - TiUP Cluster 命令
         - [TiUP Cluster 命令概览](/tiup/tiup-component-cluster.md)
         - [tiup cluster audit](/tiup/tiup-component-cluster-audit.md)
+        - [tiup cluster audit cleanup](/tiup/tiup-component-cluster-audit-cleanup.md)
         - [tiup cluster check](/tiup/tiup-component-cluster-check.md)
         - [tiup cluster clean](/tiup/tiup-component-cluster-clean.md)
         - [tiup cluster deploy](/tiup/tiup-component-cluster-deploy.md)
@@ -294,6 +302,8 @@
         - [tiup cluster help](/tiup/tiup-component-cluster-help.md)
         - [tiup cluster import](/tiup/tiup-component-cluster-import.md)
         - [tiup cluster list](/tiup/tiup-component-cluster-list.md)
+        - [tiup cluster meta backup](/tiup/tiup-component-cluster-meta-backup.md)
+        - [tiup cluster meta restore](/tiup/tiup-component-cluster-meta-restore.md)
         - [tiup cluster patch](/tiup/tiup-component-cluster-patch.md)
         - [tiup cluster prune](/tiup/tiup-component-cluster-prune.md)
         - [tiup cluster reload](/tiup/tiup-component-cluster-reload.md)
@@ -337,50 +347,7 @@
       - [tiup-cluster 部署运维生产集群](/tiup/tiup-cluster.md)
       - [tiup-mirror 定制离线镜像](/tiup/tiup-mirror.md)
       - [tiup-bench 进行 TPCC/TPCH 压力测试](/tiup/tiup-bench.md)
-  - PingCAP Clinic 诊断服务
-    - [概述](/clinic/clinic-introduction.md)
-    - [快速上手](/clinic/quick-start-with-clinic.md)
-    - [使用 PingCAP Clinic 诊断 TiDB 集群](/clinic/clinic-user-guide-for-tiup.md)
-    - [采集 SQL 查询计划信息](/clinic/clinic-collect-sql-query-plan.md)
-    - [数据采集说明](/clinic/clinic-data-instruction-for-tiup.md)
   - [TiDB Operator](/tidb-operator-overview.md)
-  - [Dumpling](/dumpling-overview.md)
-  - TiDB Lightning
-    - [概述](/tidb-lightning/tidb-lightning-overview.md)
-    - [快速上手](/get-started-with-tidb-lightning.md)
-    - [部署 TiDB Lightning](/tidb-lightning/deploy-tidb-lightning.md)
-    - [目标数据库要求](/tidb-lightning/tidb-lightning-requirements.md)
-    - 数据源
-      - [文件匹配规则](/tidb-lightning/tidb-lightning-data-source.md)
-      - [CSV](/tidb-lightning/tidb-lightning-data-source.md#csv)
-      - [SQL](/tidb-lightning/tidb-lightning-data-source.md#sql)
-      - [Parquet](/tidb-lightning/tidb-lightning-data-source.md#parquet)
-      - [自定义文件匹配](/tidb-lightning/tidb-lightning-data-source.md#自定义文件匹配)
-    - Physical 导入模式
-      - [概述](/tidb-lightning/tidb-lightning-physical-import-mode.md)
-      - [必要条件及限制](/tidb-lightning/tidb-lightning-physical-import-mode.md#必要条件及限制)
-      - [配置及使用](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md)
-      - [冲突检测](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md#冲突数据检测)
-      - [性能调优](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md#性能调优)
-    - Logical 导入模式
-      - [概述](/tidb-lightning/tidb-lightning-logical-import-mode.md)
-      - [必要条件及限制](/tidb-lightning/tidb-lightning-logical-import-mode.md#必要条件及限制)
-      - [配置及使用](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md)
-      - [冲突检测](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md#冲突数据检测)
-      - [性能调优](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md#性能调优)
-    - [前置检查](/tidb-lightning/tidb-lightning-prechecks.md)
-    - [表库过滤](/table-filter.md)
-    - [断点续传](/tidb-lightning/tidb-lightning-checkpoints.md)
-    - [并行导入](/tidb-lightning/tidb-lightning-distributed-import.md)
-    - [可容忍错误](/tidb-lightning/tidb-lightning-error-resolution.md)
-    - [故障处理](/tidb-lightning/troubleshoot-tidb-lightning.md)
-    - 参考手册
-      - [完整配置文件](/tidb-lightning/tidb-lightning-configuration.md)
-      - [命令行参数](/tidb-lightning/tidb-lightning-command-line-full.md)
-      - [监控告警](/tidb-lightning/monitor-tidb-lightning.md)
-      - [Web 界面](/tidb-lightning/tidb-lightning-web-interface.md)
-      - [FAQ](/tidb-lightning/tidb-lightning-faq.md)
-      - [术语表](/tidb-lightning/tidb-lightning-glossary.md)
   - TiDB Data Migration
     - [关于 Data Migration](/dm/dm-overview.md)
     - [架构简介](/dm/dm-arch.md)
@@ -395,10 +362,12 @@
       - [创建数据源](/dm/quick-start-create-source.md)
       - [数据源操作](/dm/dm-manage-source.md)
       - [任务配置向导](/dm/dm-task-configuration-guide.md)
-      - [Table routing](/dm/dm-key-features.md#table-routing)
-      - [Block & Allow Lists](/dm/dm-key-features.md#block--allow-table-lists)
-      - [过滤 binlog 事件](/dm/dm-key-features.md#binlog-event-filter)
+      - [分库分表合并](/dm/dm-shard-merge.md)
+      - [表路由](/dm/dm-table-routing.md)
+      - [黑白名单](/dm/dm-block-allow-table-lists.md)
+      - [过滤 binlog 事件](/dm/dm-binlog-event-filter.md)
       - [通过 SQL 表达式过滤 DML](/dm/feature-expression-filter.md)
+      - [Online DDL 工具支持](/dm/dm-online-ddl-tool-support.md)
       - 迁移任务操作
         - [任务前置检查](/dm/dm-precheck.md)
         - [创建任务](/dm/dm-create-task.md)
@@ -435,33 +404,33 @@
       - [导出和导入集群的数据源和任务配置](/dm/dm-export-import-config.md)
       - [处理告警](/dm/dm-handle-alerts.md)
       - [日常巡检](/dm/dm-daily-check.md)
-     - 参考手册
-        - 架构组件
-          - [DM-worker 说明](/dm/dm-worker-intro.md)
-          - [安全模式](/dm/dm-safe-mode.md)
-          - [Relay Log](/dm/relay-log.md)
-          - [DDL 特殊处理说明](/dm/dm-ddl-compatible.md)
-        - 运行机制
-          - [DML 同步机制](/dm/dm-dml-replication-logic.md)
-        - 命令行
-          - [DM-master & DM-worker](/dm/dm-command-line-flags.md)
-        - 配置文件
-          - [概述](/dm/dm-config-overview.md)
-          - [数据源配置](/dm/dm-source-configuration-file.md)
-          - [迁移任务配置](/dm/task-configuration-file-full.md)
-          - [DM-master 配置](/dm/dm-master-configuration-file.md)
-          - [DM-worker 配置](/dm/dm-worker-configuration-file.md)
-          - [Table Selector](/dm/table-selector.md)
-        - [OpenAPI](/dm/dm-open-api.md)
-        - [兼容性目录](/dm/dm-compatibility-catalog.md)
-        - 安全
-          - [为 DM 的连接开启加密传输](/dm/dm-enable-tls.md)
-          - [生成自签名证书](/dm/dm-generate-self-signed-certificates.md)
-        - 监控告警
-          - [监控指标](/dm/monitor-a-dm-cluster.md)
-          - [告警信息](/dm/dm-alert-rules.md)
-        - [错误码](/dm/dm-error-handling.md#常见故障处理方法)
-        - [术语表](/dm/dm-glossary.md)
+    - 参考手册
+      - 架构组件
+        - [DM-worker 说明](/dm/dm-worker-intro.md)
+        - [安全模式](/dm/dm-safe-mode.md)
+        - [Relay Log](/dm/relay-log.md)
+        - [DDL 特殊处理说明](/dm/dm-ddl-compatible.md)
+      - 运行机制
+        - [DML 同步机制](/dm/dm-dml-replication-logic.md)
+      - 命令行
+        - [DM-master & DM-worker](/dm/dm-command-line-flags.md)
+      - 配置文件
+        - [概述](/dm/dm-config-overview.md)
+        - [数据源配置](/dm/dm-source-configuration-file.md)
+        - [迁移任务配置](/dm/task-configuration-file-full.md)
+        - [DM-master 配置](/dm/dm-master-configuration-file.md)
+        - [DM-worker 配置](/dm/dm-worker-configuration-file.md)
+        - [Table Selector](/dm/table-selector.md)
+      - [OpenAPI](/dm/dm-open-api.md)
+      - [兼容性目录](/dm/dm-compatibility-catalog.md)
+      - 安全
+        - [为 DM 的连接开启加密传输](/dm/dm-enable-tls.md)
+        - [生成自签名证书](/dm/dm-generate-self-signed-certificates.md)
+      - 监控告警
+        - [监控指标](/dm/monitor-a-dm-cluster.md)
+        - [告警信息](/dm/dm-alert-rules.md)
+      - [错误码](/dm/dm-error-handling.md#常见故障处理方法)
+      - [术语表](/dm/dm-glossary.md)
       - 使用示例
         - [使用 DM 迁移数据](/dm/migrate-data-using-dm.md)
         - [快速创建迁移任务](/dm/quick-start-create-task.md)
@@ -470,6 +439,43 @@
         - [常见问题](/dm/dm-faq.md)
         - [错误处理及恢复](/dm/dm-error-handling.md)
       - [版本发布历史](/dm/dm-release-notes.md)
+  - TiDB Lightning
+    - [概述](/tidb-lightning/tidb-lightning-overview.md)
+    - [快速上手](/get-started-with-tidb-lightning.md)
+    - [部署 TiDB Lightning](/tidb-lightning/deploy-tidb-lightning.md)
+    - [目标数据库要求](/tidb-lightning/tidb-lightning-requirements.md)
+    - 数据源
+      - [文件匹配规则](/tidb-lightning/tidb-lightning-data-source.md)
+      - [CSV](/tidb-lightning/tidb-lightning-data-source.md#csv)
+      - [SQL](/tidb-lightning/tidb-lightning-data-source.md#sql)
+      - [Parquet](/tidb-lightning/tidb-lightning-data-source.md#parquet)
+      - [自定义文件匹配](/tidb-lightning/tidb-lightning-data-source.md#自定义文件匹配)
+    - Physical Import Mode
+      - [概述](/tidb-lightning/tidb-lightning-physical-import-mode.md)
+      - [必要条件及限制](/tidb-lightning/tidb-lightning-physical-import-mode.md#必要条件及限制)
+      - [配置及使用](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md)
+      - [冲突检测](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md#冲突数据检测)
+      - [性能调优](/tidb-lightning/tidb-lightning-physical-import-mode-usage.md#性能调优)
+    - Logical Import Mode
+      - [概述](/tidb-lightning/tidb-lightning-logical-import-mode.md)
+      - [必要条件及限制](/tidb-lightning/tidb-lightning-logical-import-mode.md#必要条件)
+      - [配置及使用](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md)
+      - [冲突检测](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md#冲突数据检测)
+      - [性能调优](/tidb-lightning/tidb-lightning-logical-import-mode-usage.md#性能调优)
+    - [前置检查](/tidb-lightning/tidb-lightning-prechecks.md)
+    - [表库过滤](/table-filter.md)
+    - [断点续传](/tidb-lightning/tidb-lightning-checkpoints.md)
+    - [并行导入](/tidb-lightning/tidb-lightning-distributed-import.md)
+    - [可容忍错误](/tidb-lightning/tidb-lightning-error-resolution.md)
+    - [故障处理](/tidb-lightning/troubleshoot-tidb-lightning.md)
+    - 参考手册
+      - [完整配置文件](/tidb-lightning/tidb-lightning-configuration.md)
+      - [命令行参数](/tidb-lightning/tidb-lightning-command-line-full.md)
+      - [监控告警](/tidb-lightning/monitor-tidb-lightning.md)
+      - [Web 界面](/tidb-lightning/tidb-lightning-web-interface.md)
+      - [FAQ](/tidb-lightning/tidb-lightning-faq.md)
+      - [术语表](/tidb-lightning/tidb-lightning-glossary.md)
+  - [Dumpling](/dumpling-overview.md)
   - Backup & Restore (BR)
     - [BR 简介](/br/backup-and-restore-overview.md)
     - [部署和使用 BR](/br/br-deployment.md)
@@ -489,6 +495,21 @@
       - [使用 BR 备份和恢复 RawKV 数据](/br/rawkv-backup-and-restore.md)
       - [使用 Dumpling 和 TiDB Lightning 备份和恢复数据](/backup-and-restore-using-dumpling-lightning.md)
       - [BR 常见问题](/br/backup-and-restore-faq.md)
+  - TiCDC
+    - [概述](/ticdc/ticdc-overview.md)
+    - [安装部署](/ticdc/deploy-ticdc.md)
+    - [运维管理](/ticdc/manage-ticdc.md)
+    - 监控告警
+      - [监控指标](/ticdc/monitor-ticdc.md)
+      - [报警规则](/ticdc/ticdc-alert-rules.md)
+    - [故障处理](/ticdc/troubleshoot-ticdc.md)
+    - 参考指南
+      - [TiCDC Open API](/ticdc/ticdc-open-api.md)
+      - [TiCDC Open Protocol](/ticdc/ticdc-open-protocol.md)
+      - [TiCDC Avro Protocol](/ticdc/ticdc-avro-protocol.md)
+      - [TiCDC Canal-JSON Protocol](/ticdc/ticdc-canal-json.md)
+    - [常见问题解答](/ticdc/ticdc-faq.md)
+    - [术语表](/ticdc/ticdc-glossary.md)
   - TiDB Binlog
     - [概述](/tidb-binlog/tidb-binlog-overview.md)
     - [快速上手](/tidb-binlog/get-started-with-tidb-binlog.md)
@@ -509,21 +530,21 @@
       - [故障诊断](/tidb-binlog/troubleshoot-tidb-binlog.md)
       - [常见错误修复](/tidb-binlog/handle-tidb-binlog-errors.md)
     - [FAQ](/tidb-binlog/tidb-binlog-faq.md)
-  - TiCDC
-    - [概述](/ticdc/ticdc-overview.md)
-    - [安装部署](/ticdc/deploy-ticdc.md)
-    - [运维管理](/ticdc/manage-ticdc.md)
-    - 监控告警
-      - [监控指标](/ticdc/monitor-ticdc.md)
-      - [报警规则](/ticdc/ticdc-alert-rules.md)
-    - [故障处理](/ticdc/troubleshoot-ticdc.md)
-    - 参考指南
-      - [TiCDC Open API](/ticdc/ticdc-open-api.md)
-      - [TiCDC Open Protocol](/ticdc/ticdc-open-protocol.md)
-      - [TiCDC Avro Protocol](/ticdc/ticdc-avro-protocol.md)
-      - [TiCDC Canal-JSON Protocol](/ticdc/ticdc-canal-json.md)
-    - [常见问题解答](/ticdc/ticdc-faq.md)
-    - [术语表](/ticdc/ticdc-glossary.md)
+  - PingCAP Clinic 诊断服务
+    - [概述](/clinic/clinic-introduction.md)
+    - [快速上手](/clinic/quick-start-with-clinic.md)
+    - [使用 PingCAP Clinic 诊断集群](/clinic/clinic-user-guide-for-tiup.md)
+    - [使用 PingCAP Clinic 生成诊断报告](/clinic/clinic-report.md)
+    - [采集 SQL 查询计划信息](/clinic/clinic-collect-sql-query-plan.md)
+    - [数据采集说明](/clinic/clinic-data-instruction-for-tiup.md)
+  - TiSpark
+    - [TiSpark 用户指南](/tispark-overview.md)
+  - sync-diff-inspector
+    - [概述](/sync-diff-inspector/sync-diff-inspector-overview.md)
+    - [不同库名或表名的数据校验](/sync-diff-inspector/route-diff.md)
+    - [分库分表场景下的数据校验](/sync-diff-inspector/shard-diff.md)
+    - [TiDB 主从集群的数据校验](/sync-diff-inspector/upstream-downstream-diff.md)
+    - [基于 DM 同步场景下的数据校验](/sync-diff-inspector/dm-diff.md)
   - TiUniManager
     - [概述](/tiunimanager/tiunimanager-overview.md)
     - [安装和运维](/tiunimanager/tiunimanager-install-and-maintain.md)
@@ -541,20 +562,43 @@
       - [v1.0.2](/tiunimanager/tiunimanager-release-1.0.2.md)
       - [v1.0.1](/tiunimanager/tiunimanager-release-1.0.1.md)
       - [v1.0.0](/tiunimanager/tiunimanager-release-1.0.0.md)
-  - sync-diff-inspector
-    - [概述](/sync-diff-inspector/sync-diff-inspector-overview.md)
-    - [不同库名或表名的数据校验](/sync-diff-inspector/route-diff.md)
-    - [分库分表场景下的数据校验](/sync-diff-inspector/shard-diff.md)
-    - [TiDB 主从集群的数据校验](/sync-diff-inspector/upstream-downstream-diff.md)
-    - [基于 DM 同步场景下的数据校验](/sync-diff-inspector/dm-diff.md)
-  - TiSpark
-    - [TiSpark 用户指南](/tispark-overview.md)
 - 参考指南
   - 架构
     - [概述](/tidb-architecture.md)
     - [存储](/tidb-storage.md)
     - [计算](/tidb-computing.md)
     - [调度](/tidb-scheduling.md)
+  - 存储引擎 TiKV
+    - [TiKV 简介](/tikv-overview.md)
+    - [RocksDB 简介](/storage-engine/rocksdb-overview.md)
+    - [Titan 简介](/storage-engine/titan-overview.md)
+    - [Titan 配置说明](/storage-engine/titan-configuration.md)
+  - 存储引擎 TiFlash
+    - [TiFlash 简介](/tiflash/tiflash-overview.md)
+    - [构建 TiFlash 副本](/tiflash/create-tiflash-replicas.md)
+    - [使用 TiDB 读取 TiFlash](/tiflash/use-tidb-to-read-tiflash.md)
+    - [使用 TiSpark 读取 TiFlash](/tiflash/use-tispark-to-read-tiflash.md)
+    - [使用 MPP 模式](/tiflash/use-tiflash-mpp-mode.md)
+    - [TiFlash 支持的计算下推](/tiflash/tiflash-supported-pushdown-calculations.md)
+    - [TiFlash 数据校验](/tiflash/tiflash-data-validation.md)
+    - [TiFlash 兼容性说明](/tiflash/tiflash-compatibility.md)
+  - [系统变量](/system-variables.md)
+  - 配置文件参数
+    - [tidb-server](/tidb-configuration-file.md)
+    - [tikv-server](/tikv-configuration-file.md)
+    - [tiflash-server](/tiflash/tiflash-configuration.md)
+    - [pd-server](/pd-configuration-file.md)
+  - CLI
+    - [tikv-ctl](/tikv-control.md)
+    - [pd-ctl](/pd-control.md)
+    - [tidb-ctl](/tidb-control.md)
+    - [pd-recover](/pd-recover.md)
+    - [binlog-ctl](/tidb-binlog/binlog-control.md)
+  - 命令行参数
+    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
+    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
+    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
+    - [pd-server](/command-line-flags-for-pd-configuration.md)
   - 监控指标
     - [Overview 面板](/grafana-overview-dashboard.md)
     - [Performance Overview 面板](/grafana-performance-overview-dashboard.md)
@@ -595,6 +639,8 @@
       - [`ADMIN CANCEL DDL`](/sql-statements/sql-statement-admin-cancel-ddl.md)
       - [`ADMIN CHECKSUM TABLE`](/sql-statements/sql-statement-admin-checksum-table.md)
       - [`ADMIN CHECK [TABLE|INDEX]`](/sql-statements/sql-statement-admin-check-table-index.md)
+      - [`ADMIN CLEANUP`](/sql-statements/sql-statement-admin-cleanup.md)
+      - [`ADMIN RECOVER INDEX`](/sql-statements/sql-statement-admin-recover.md)
       - [`ADMIN SHOW DDL [JOBS|QUERIES]`](/sql-statements/sql-statement-admin-show-ddl.md)
       - [`ADMIN SHOW TELEMETRY`](/sql-statements/sql-statement-admin-show-telemetry.md)
       - [`ALTER DATABASE`](/sql-statements/sql-statement-alter-database.md)
@@ -651,6 +697,7 @@
       - [`KILL [TIDB]`](/sql-statements/sql-statement-kill.md)
       - [`LOAD DATA`](/sql-statements/sql-statement-load-data.md)
       - [`LOAD STATS`](/sql-statements/sql-statement-load-stats.md)
+      - [`LOCK TABLES` 和 `UNLOCK TABLES`](/sql-statements/sql-statement-lock-tables-and-unlock-tables.md)
       - [`MODIFY COLUMN`](/sql-statements/sql-statement-modify-column.md)
       - [`PREPARE`](/sql-statements/sql-statement-prepare.md)
       - [`RECOVER TABLE`](/sql-statements/sql-statement-recover-table.md)
@@ -748,6 +795,7 @@
       - [集合运算](/functions-and-operators/set-operators.md)
       - [下推到 TiKV 的表达式列表](/functions-and-operators/expressions-pushed-down.md)
       - [TiDB 特有的函数](/functions-and-operators/tidb-functions.md)
+      - [Oracle 与 TiDB 函数和语法差异对照](/oracle-functions-to-tidb.md)
     - [聚簇索引](/clustered-indexes.md)
     - [约束](/constraints.md)
     - [生成列](/generated-columns.md)
@@ -849,38 +897,6 @@
         - [分享会话](/dashboard/dashboard-session-share.md)
         - [配置 SSO 登录](/dashboard/dashboard-session-sso.md)
       - [常见问题](/dashboard/dashboard-faq.md)
-  - CLI
-    - [tikv-ctl](/tikv-control.md)
-    - [pd-ctl](/pd-control.md)
-    - [tidb-ctl](/tidb-control.md)
-    - [pd-recover](/pd-recover.md)
-    - [binlog-ctl](/tidb-binlog/binlog-control.md)
-  - 命令行参数
-    - [tidb-server](/command-line-flags-for-tidb-configuration.md)
-    - [tikv-server](/command-line-flags-for-tikv-configuration.md)
-    - [tiflash-server](/tiflash/tiflash-command-line-flags.md)
-    - [pd-server](/command-line-flags-for-pd-configuration.md)
-  - 配置文件参数
-    - [tidb-server](/tidb-configuration-file.md)
-    - [tikv-server](/tikv-configuration-file.md)
-    - [tiflash-server](/tiflash/tiflash-configuration.md)
-    - [pd-server](/pd-configuration-file.md)
-  - [系统变量](/system-variables.md)
-  - 存储引擎
-    - TiKV
-      - [TiKV 简介](/tikv-overview.md)
-      - [RocksDB 简介](/storage-engine/rocksdb-overview.md)
-      - [Titan 简介](/storage-engine/titan-overview.md)
-      - [Titan 配置说明](/storage-engine/titan-configuration.md)
-    - TiFlash
-      - [TiFlash 简介](/tiflash/tiflash-overview.md)
-      - [构建 TiFlash 副本](/tiflash/create-tiflash-replicas.md)
-      - [使用 TiDB 读取 TiFlash](/tiflash/use-tidb-to-read-tiflash.md)
-      - [使用 TiSpark 读取 TiFlash](/tiflash/use-tispark-to-read-tiflash.md)
-      - [使用 MPP 模式](/tiflash/use-tiflash-mpp-mode.md)
-      - [TiFlash 支持的计算下推](/tiflash/tiflash-supported-pushdown-calculations.md)
-      - [TiFlash 数据校验](/tiflash/tiflash-data-validation.md)
-      - [TiFlash 兼容性说明](/tiflash/tiflash-compatibility.md)
   - [遥测](/telemetry.md)
   - [错误码](/error-codes.md)
   - [通过拓扑 label 进行副本调度](/schedule-replicas-by-topology-labels.md)
@@ -901,14 +917,24 @@
   - [TiDB 版本规则](/releases/versioning.md)
   - [TiDB 离线包](/binary-package.md)
   - v6.1
+    - [6.1.7](/releases/release-6.1.7.md)
+    - [6.1.6](/releases/release-6.1.6.md)
+    - [6.1.5](/releases/release-6.1.5.md)
+    - [6.1.4](/releases/release-6.1.4.md)
+    - [6.1.3](/releases/release-6.1.3.md)
+    - [6.1.2](/releases/release-6.1.2.md)
+    - [6.1.1](/releases/release-6.1.1.md)
     - [6.1.0](/releases/release-6.1.0.md)
   - v6.0
     - [6.0.0-DMR](/releases/release-6.0.0-dmr.md)
   - v5.4
+    - [5.4.3](/releases/release-5.4.3.md)
     - [5.4.2](/releases/release-5.4.2.md)
     - [5.4.1](/releases/release-5.4.1.md)
     - [5.4.0](/releases/release-5.4.0.md)
   - v5.3
+    - [5.3.4](/releases/release-5.3.4.md)
+    - [5.3.3](/releases/release-5.3.3.md)
     - [5.3.2](/releases/release-5.3.2.md)
     - [5.3.1](/releases/release-5.3.1.md)
     - [5.3.0](/releases/release-5.3.0.md)
@@ -919,6 +945,7 @@
     - [5.2.1](/releases/release-5.2.1.md)
     - [5.2.0](/releases/release-5.2.0.md)
   - v5.1
+    - [5.1.5](/releases/release-5.1.5.md)
     - [5.1.4](/releases/release-5.1.4.md)
     - [5.1.3](/releases/release-5.1.3.md)
     - [5.1.2](/releases/release-5.1.2.md)

@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD007 -->
 <!-- markdownlint-disable MD041 -->
 
+- [TiDB on Kubernetes 文档](https://docs.pingcap.com/zh/tidb-in-kubernetes/v1.3)
 - 关于 TiDB Operator
   - [简介](tidb-operator-overview.md)
   - [v1.3 新特性](whats-new-in-v1.3.md)
@@ -82,6 +83,7 @@
     - [修改 TiDB 集群配置](modify-tidb-configuration.md)
     - [配置集群故障自动转移](use-auto-failover.md)
     - [暂停 TiDB 集群同步](pause-sync-of-tidb-cluster.md)
+    - [挂起 TiDB 集群](suspend-tidb-cluster.md)
     - [使用多套 TiDB Operator 单独管理不同的 TiDB 集群](deploy-multiple-tidb-operator.md)
     - [维护 TiDB 集群所在的 Kubernetes 节点](maintain-a-kubernetes-node.md)
     - [从 Helm 2 迁移到 Helm 3](migrate-to-helm3.md)
@@ -118,6 +120,9 @@
   - [PingCAP Clinic 数据采集范围说明](clinic-data-collection.md)
 - 版本发布历史
   - v1.3
+    - [1.3.10](releases/release-1.3.10.md)
+    - [1.3.9](releases/release-1.3.9.md)
+    - [1.3.8](releases/release-1.3.8.md)
     - [1.3.7](releases/release-1.3.7.md)
     - [1.3.6](releases/release-1.3.6.md)
     - [1.3.5](releases/release-1.3.5.md)

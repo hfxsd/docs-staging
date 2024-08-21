@@ -1,0 +1,30 @@
+name: Sync scaffold
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 0 */15 * *" # every 15 days
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  sync_scaffold:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout current repo
+      uses: actions/checkout@v3
+
+    - name: Run sync_scaffold script
+      run: |
+        git config user.name "Docsite Preview Bot"
+        git config user.email ""
+        ./sync_scaffold.sh
+        ./.github/git_push.sh ${{ github.ref_name }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
